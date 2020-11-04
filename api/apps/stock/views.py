@@ -1,6 +1,6 @@
 import logging
 
-from rest_framework import status, generics, permissions
+from rest_framework import status, generics, permissions, filters
 from django.shortcuts import get_object_or_404
 from apps.stock.models import Product, ProductManagement
 from apps.stock.serializers import ProductSerializer, ProductImportSerializer, ProductManagementSerializer
@@ -13,6 +13,8 @@ logger = logging.getLogger(__name__)
 class ProductListCreate(generics.ListCreateAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
+    filter_backends = [filters.SearchFilter, filters.OrderingFilter]
+    search_fields = ['name', 'sku', 'quantity', 'category', 'price', 'size']
 
 
 class ProductRetrieve(generics.RetrieveUpdateDestroyAPIView):
