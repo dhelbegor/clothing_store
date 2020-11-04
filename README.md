@@ -10,6 +10,8 @@
 
 Para prepara o ambiente inicial execute uma única vez:
 
+
+`$ cp api/.env.sample api/.env`
 `$ make up`
 `$ make dj migrate`
 `$ make createsu`
@@ -24,5 +26,6 @@ para executar os testes rode:
 
 `$ make test`
 
-para efetuar login use
+para efetuar autenticação use:
+
 admin@stock.com:stock123
