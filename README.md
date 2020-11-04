@@ -23,3 +23,6 @@ Estará disponível:
 para executar os testes rode:
 
 `$ make test`
+
+para efetuar login use
+admin@stock.com:stock123
